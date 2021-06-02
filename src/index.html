@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <link
+    href='https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css'
+    rel='stylesheet'
+  />
+  <title>Avia Tickets App</title>
+</head>
+<body>
+<header class='bg-purple-700 text-purple-50 body-font'>
+  <div
+    class='
+          container
+          mx-auto
+          flex flex-wrap
+          p-5
+          flex-col
+          md:flex-row
+          items-center
+        '
+  >
+    <a class='flex title-font font-medium items-center mb-4 md:mb-0'>
+          <span class='w-10 h-10 text-white p-2 bg-purple-400 rounded-full'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              class='h-6 w-6'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+            >
+              <path
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                stroke-width='2'
+                d='M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+              />
+            </svg>
+          </span>
+      <span class='ml-3 text-xl'>Avia Tickets App</span></a
+    >
+    <div
+      class='
+            md:ml-auto
+            flex flex-wrap
+            items-center
+            justify-center
+            text-base
+            hover:text-purple-300
+            cursor-pointer
+          '
+    >
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        class='h-6 w-6'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+      >
+        <path
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          stroke-width='2'
+          d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
+        />
+      </svg>
+
+      <span class='ml-2'>Favorites</span>
+    </div>
+    <div class='ml-6 flex flex-wrap items-center text-base justify-center'>
+      <div class='relative'>
+        <select
+          id='currency'
+          class='
+                bg-purple-700
+                appearance-none
+                py-2
+                focus:outline-none
+                text-base
+                pl-3
+                pr-10
+              '
+        >
+          <option value='USD'>$ USD</option>
+          <option value='EUR'>€ EUR</option>
+        </select>
+        <span
+          class='
+                absolute
+                right-0
+                top-0
+                h-full
+                w-10
+                text-center text-purple-50
+                pointer-events-none
+                flex
+                items-center
+                justify-center
+              '
+        >
+              <svg
+                fill='none'
+                stroke='currentColor'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                stroke-width='2'
+                class='w-4 h-4'
+                viewBox='0 0 24 24'
+              >
+                <path d='M6 9l6 6 6-6'></path>
+              </svg>
+            </span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class='container mx-auto px-8 pt-12'>
+  <div class='bg-gray-100 rounded-lg p-8 md:m-auto w-full'>
+    <h1 class='text-purple-900 text-4xl text-center title-font mt-4 mb-10'>
+      Search your tickets
+    </h1>
+    <form action='' name='locationControls'>
+      <div class='flex'>
+        <div class='w-3/12'>
+          <label for='origin' class='leading-7 text-sm text-gray-600'
+          >Origin</label
+          >
+          <div class='relative'>
+            <input
+              value='Санкт-Петербург, Россия'
+              type='text'
+              id='origin'
+              name='origin'
+              class='
+                    autocomplete-cities
+                    w-full
+                    h-12
+                    bg-white
+                    rounded
+                    border border-gray-300
+                    focus:border-purple-500
+                    focus:ring-2 focus:ring-purple-200
+                    text-base
+                    outline-none
+                    text-gray-700
+                    py-1
+                    px-3
+                    leading-8
+                    transition-colors
+                    duration-200
+                    ease-in-out
+                  '
+            />
+
+            <div
+              class='
+                    autocomplete-container
+                    hidden
+                    origin-top-right
+                    absolute
+                    mt-1
+                    py-1
+                    left-0
+                    w-full
+                    rounded
+                    shadow-lg
+                    bg-white
+                    ring-1 ring-black ring-opacity-5
+                    focus:outline-none
+                  '
+              role='menu'
+              aria-orientation='vertical'
+              aria-labelledby='menu-button'
+              tabindex='-1'
+            ></div>
+          </div>
+        </div>
+        <div class='w-3/12 ml-2'>
+          <label for='destination' class='leading-7 text-sm text-gray-600'
+          >Destination</label
+          >
+          <div class='relative'>
+            <input
+              value='Рим, Италия'
+              type='text'
+              id='destination'
+              name='destination'
+              class='
+                    autocomplete-cities
+                    w-full
+                    h-12
+                    bg-white
+                    rounded
+                    border border-gray-300
+                    focus:border-purple-500
+                    focus:ring-2 focus:ring-purple-200
+                    text-base
+                    outline-none
+                    text-gray-700
+                    py-1
+                    px-3
+                    leading-8
+                    transition-colors
+                    duration-200
+                    ease-in-out
+                  '
+            />
+            <div
+              class='
+                    autocomplete-container
+                    hidden
+                    origin-top-right
+                    absolute
+                    mt-1
+                    py-1
+                    left-0
+                    w-full
+                    rounded
+                    shadow-lg
+                    bg-white
+                    ring-1 ring-black ring-opacity-5
+                    focus:outline-none
+                  '
+              role='menu'
+              aria-orientation='vertical'
+              aria-labelledby='menu-button'
+              tabindex='-1'
+            ></div>
+          </div>
+        </div>
+        <div class='w-2/12 ml-2'>
+          <label for='depart' class='leading-7 text-sm text-gray-600'
+          >Depart day</label
+          >
+          <input
+            value='2021-06-25'
+            type='date'
+            id='depart'
+            name='depart'
+            class='
+                  w-full
+                  h-12
+                  bg-white
+                  rounded
+                  border border-gray-300
+                  focus:border-purple-500
+                  focus:ring-2 focus:ring-purple-200
+                  text-base
+                  outline-none
+                  text-gray-700
+                  py-1
+                  px-3
+                  leading-8
+                  transition-colors
+                  duration-200
+                  ease-in-out
+                '
+          />
+        </div>
+        <div class='w-2/12 ml-2'>
+          <label for='returnDate' class='leading-7 text-sm text-gray-600'
+          >Return day</label
+          >
+          <input
+            value='2021-06-30'
+            type='date'
+            id='returnDate'
+            name='returnDate'
+            class='
+                  w-full
+                  h-12
+                  bg-white
+                  rounded
+                  border border-gray-300
+                  focus:border-purple-500
+                  focus:ring-2 focus:ring-purple-200
+                  text-base
+                  outline-none
+                  text-gray-700
+                  py-1
+                  px-3
+                  leading-8
+                  transition-colors
+                  duration-200
+                  ease-in-out
+                '
+          />
+        </div>
+        <button
+          type='submit'
+          class='
+                w-2/12
+                h-12
+                ml-4
+                self-end
+                border-2
+                text-white
+                border-purple-500
+                bg-purple-500
+                focus:outline-none
+                hover:bg-purple-600
+                rounded
+              '
+        >
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class='container mx-auto px-8 my-12 overflow-y-auto h-80'>
+  <div class='bg-gray-50 rounded-lg p-8'>
+    <div class='tickets-sections flex flex-wrap -m-2'></div>
+  </div>
+</div>
+
+</body>
+</html>
