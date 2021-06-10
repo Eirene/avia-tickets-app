@@ -7,7 +7,6 @@ class TicketsUI {
   }
 
   renderTickets(tickets) {
-    console.log("renderTickets:", tickets);
     this.clearContainer();
 
     if (!tickets.length) {
@@ -46,7 +45,7 @@ class TicketsUI {
   static ticketTemplate(ticket, currency) {
     return `
       <div class="p-2 md:w-1/2 w-full">
-        <div class="h-full border-gray-200 border p-4 rounded-lg bg-white">
+        <div class="h-full p-4 bg-white shadow rounded-lg">
           <div class="text-gray-500 text-base">
             <img alt="${ticket.airline_logo}" class="w-12 h-12 inline mr-6" 
             src="${ticket.airline_logo}">     

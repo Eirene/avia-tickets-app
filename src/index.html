@@ -3,16 +3,15 @@
 <head>
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-  <link
-    href='https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css'
-    rel='stylesheet'
-  />
+  <link href='css/styles.css' rel='stylesheet' />
+  <link href='https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css' rel='stylesheet' />
   <title>Avia Tickets App</title>
 </head>
-<body>
-<header class='bg-purple-700 text-purple-50 body-font'>
-  <div
-    class='
+<body class='bg-gray-50'>
+<section class='top'>
+  <header class='bg-purple-700 bg-opacity-50 text-purple-50 body-font'>
+    <div
+      class='
           container
           mx-auto
           flex flex-wrap
@@ -21,8 +20,8 @@
           md:flex-row
           items-center
         '
-  >
-    <a class='flex title-font font-medium items-center mb-4 md:mb-0'>
+    >
+      <a href='/' class='flex title-font font-medium items-center mb-4 md:mb-0'>
           <span class='w-10 h-10 text-white p-2 bg-purple-400 rounded-full'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -39,41 +38,34 @@
               />
             </svg>
           </span>
-      <span class='ml-3 text-xl'>Avia Tickets App</span></a
-    >
-    <div
-      class='
-            md:ml-auto
-            flex flex-wrap
-            items-center
-            justify-center
-            text-base
-            hover:text-purple-300
-            cursor-pointer
-          '
-    >
-      <svg
-        xmlns='http://www.w3.org/2000/svg'
-        class='h-6 w-6'
-        fill='none'
-        viewBox='0 0 24 24'
-        stroke='currentColor'
-      >
-        <path
-          stroke-linecap='round'
-          stroke-linejoin='round'
-          stroke-width='2'
-          d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
-        />
-      </svg>
+        <span class='ml-3 text-xl'>Avia Tickets App</span>
+      </a>
 
-      <span class='ml-2'>Favorites</span>
-    </div>
-    <div class='ml-6 flex flex-wrap items-center text-base justify-center'>
-      <div class='relative'>
-        <select
-          id='currency'
-          class='
+      <nav class='md:ml-auto flex flex-wrap items-center justify-center text-base'>
+        <div class='flex items-center hover:text-purple-300 cursor-pointer'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            class='h-6 w-6'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
+            />
+          </svg>
+          <span class='ml-2'>Favorites</span>
+        </div>
+        <a href='login.html' class='ml-10 hover:text-purple-300 cursor-pointer'>Login</a>
+      </nav>
+      <div class='ml-10 flex flex-wrap items-center text-base justify-center'>
+        <div class='relative'>
+          <select
+            id='currency'
+            class='
                 bg-purple-700
                 appearance-none
                 py-2
@@ -82,12 +74,12 @@
                 pl-3
                 pr-10
               '
-        >
-          <option value='USD'>$ USD</option>
-          <option value='EUR'>€ EUR</option>
-        </select>
-        <span
-          class='
+          >
+            <option value='USD'>$ USD</option>
+            <option value='EUR'>€ EUR</option>
+          </select>
+          <span
+            class='
                 absolute
                 right-0
                 top-0
@@ -99,7 +91,7 @@
                 items-center
                 justify-center
               '
-        >
+          >
               <svg
                 fill='none'
                 stroke='currentColor'
@@ -112,29 +104,26 @@
                 <path d='M6 9l6 6 6-6'></path>
               </svg>
             </span>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<div class='container mx-auto px-8 pt-12'>
-  <div class='bg-gray-100 rounded-lg p-8 md:m-auto w-full'>
-    <h1 class='text-purple-900 text-4xl text-center title-font mt-4 mb-10'>
-      Search your tickets
-    </h1>
-    <form action='' name='locationControls'>
-      <div class='flex'>
-        <div class='w-3/12'>
-          <label for='origin' class='leading-7 text-sm text-gray-600'
-          >Origin</label
-          >
-          <div class='relative'>
-            <input
-              value='Санкт-Петербург, Россия'
-              type='text'
-              id='origin'
-              name='origin'
-              class='
+  <div class='bg-gray-900 bg-opacity-10'>
+    <div class='container mx-auto px-8 pt-32 pb-12'>
+      <form action='' name='locationControls'>
+        <div class='flex text-white'>
+          <div class='w-3/12'>
+            <label for='origin' class='leading-7 text-sm '
+            >Origin</label
+            >
+            <div class='relative'>
+              <input
+                value='Санкт-Петербург, Россия'
+                type='text'
+                id='origin'
+                name='origin'
+                class='
                     autocomplete-cities
                     w-full
                     h-12
@@ -153,10 +142,10 @@
                     duration-200
                     ease-in-out
                   '
-            />
+              />
 
-            <div
-              class='
+              <div
+                class='
                     autocomplete-container
                     hidden
                     origin-top-right
@@ -171,24 +160,24 @@
                     ring-1 ring-black ring-opacity-5
                     focus:outline-none
                   '
-              role='menu'
-              aria-orientation='vertical'
-              aria-labelledby='menu-button'
-              tabindex='-1'
-            ></div>
+                role='menu'
+                aria-orientation='vertical'
+                aria-labelledby='menu-button'
+                tabindex='-1'
+              ></div>
+            </div>
           </div>
-        </div>
-        <div class='w-3/12 ml-2'>
-          <label for='destination' class='leading-7 text-sm text-gray-600'
-          >Destination</label
-          >
-          <div class='relative'>
-            <input
-              value='Рим, Италия'
-              type='text'
-              id='destination'
-              name='destination'
-              class='
+          <div class='w-3/12 ml-2'>
+            <label for='destination' class='leading-7 text-sm '
+            >Destination</label
+            >
+            <div class='relative'>
+              <input
+                value='Рим, Италия'
+                type='text'
+                id='destination'
+                name='destination'
+                class='
                     autocomplete-cities
                     w-full
                     h-12
@@ -207,9 +196,9 @@
                     duration-200
                     ease-in-out
                   '
-            />
-            <div
-              class='
+              />
+              <div
+                class='
                     autocomplete-container
                     hidden
                     origin-top-right
@@ -224,23 +213,23 @@
                     ring-1 ring-black ring-opacity-5
                     focus:outline-none
                   '
-              role='menu'
-              aria-orientation='vertical'
-              aria-labelledby='menu-button'
-              tabindex='-1'
-            ></div>
+                role='menu'
+                aria-orientation='vertical'
+                aria-labelledby='menu-button'
+                tabindex='-1'
+              ></div>
+            </div>
           </div>
-        </div>
-        <div class='w-2/12 ml-2'>
-          <label for='depart' class='leading-7 text-sm text-gray-600'
-          >Depart day</label
-          >
-          <input
-            value='2021-06-25'
-            type='date'
-            id='depart'
-            name='depart'
-            class='
+          <div class='w-2/12 ml-2'>
+            <label for='depart' class='leading-7 text-sm '
+            >Depart day</label
+            >
+            <input
+              value='2021-06-25'
+              type='date'
+              id='depart'
+              name='depart'
+              class='
                   w-full
                   h-12
                   bg-white
@@ -258,18 +247,18 @@
                   duration-200
                   ease-in-out
                 '
-          />
-        </div>
-        <div class='w-2/12 ml-2'>
-          <label for='returnDate' class='leading-7 text-sm text-gray-600'
-          >Return day</label
-          >
-          <input
-            value='2021-06-30'
-            type='date'
-            id='returnDate'
-            name='returnDate'
-            class='
+            />
+          </div>
+          <div class='w-2/12 ml-2'>
+            <label for='returnDate' class='leading-7 text-sm '
+            >Return day</label
+            >
+            <input
+              value='2021-06-30'
+              type='date'
+              id='returnDate'
+              name='returnDate'
+              class='
                   w-full
                   h-12
                   bg-white
@@ -287,11 +276,11 @@
                   duration-200
                   ease-in-out
                 '
-          />
-        </div>
-        <button
-          type='submit'
-          class='
+            />
+          </div>
+          <button
+            type='submit'
+            class='
                 w-2/12
                 h-12
                 ml-4
@@ -304,16 +293,84 @@
                 hover:bg-purple-600
                 rounded
               '
-        >
-          Search
-        </button>
+          >
+            Search
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class='bg-gray-50'>
+  <div class='container mx-auto p-8'>
+    <div class="min-h-full flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-md w-full space-y-8">
+        <div>
+          <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            Sign in to your account
+          </h2>
+        </div>
+        <form name='loginForm' class="mt-8 space-y-6" action="#" method="POST">
+          <input type="hidden" name="remember" value="true">
+          <div class="rounded-md shadow-sm -space-y-px">
+            <div>
+              <label for="email" class="sr-only">Email address</label>
+              <input id="email" name="email" type="email"
+                     class="appearance-none rounded-none relative block w-full px-3 py-2
+                     border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md
+                     focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                     placeholder="Email address"
+                     value='eve.holt@reqres.in'
+                     data-required="email"
+                     data-invalid-message="Please provide valid email example@example.com">
+            </div>
+            <div>
+              <label for="password" class="sr-only">Password</label>
+              <input id="password" name="password" type="password"
+                     class="appearance-none rounded-none relative block w-full px-3 py-2
+                     border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md
+                     focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                     placeholder="Password"
+                     value='cityslicka'
+                     data-required="password">
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <div class="flex items-center">
+              <input id="remember_me" name="remember_me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+              <label for="remember_me" class="ml-2 block text-sm text-gray-900">
+                Remember me
+              </label>
+            </div>
+
+            <div class="text-sm">
+              <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">
+                Forgot your password?
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                <!-- Heroicon name: solid/lock-closed -->
+                <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                </svg>
+              </span>
+              Sign in
+            </button>
+          </div>
+        </form>
       </div>
-    </form>
+    </div>
   </div>
 </div>
 
-<div class='container mx-auto px-8 my-12 overflow-y-auto h-80'>
-  <div class='bg-gray-50 rounded-lg p-8'>
+<div class='bg-gray-50'>
+  <div class='container mx-auto p-8'>
     <div class='tickets-sections flex flex-wrap -m-2'></div>
   </div>
 </div>
