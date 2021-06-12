@@ -3,7 +3,7 @@
 <head>
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-  <link href='css/styles.css' rel='stylesheet' />
+  <link href='styles.css' rel='stylesheet' />
   <link href='https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css' rel='stylesheet' />
   <title>Avia Tickets App</title>
 </head>
@@ -65,6 +65,7 @@
         <div class='relative'>
           <select
             id='currency'
+            data-cy='currencySelect'
             class='
                 bg-purple-700
                 appearance-none
@@ -75,8 +76,8 @@
                 pr-10
               '
           >
-            <option value='USD'>$ USD</option>
-            <option value='EUR'>€ EUR</option>
+            <option value='USD' data-cy="currencyOption">$ USD</option>
+            <option value='EUR' data-cy="currencyOption">€ EUR</option>
           </select>
           <span
             class='
@@ -111,60 +112,33 @@
 
   <div class='bg-gray-900 bg-opacity-10'>
     <div class='container mx-auto px-8 pt-32 pb-12'>
-      <form action='' name='locationControls'>
+      <form action='' name='locationControls' data-cy="mainForm">
         <div class='flex text-white'>
           <div class='w-3/12'>
             <label for='origin' class='leading-7 text-sm '
             >Origin</label
             >
             <div class='relative'>
-              <input
-                value='Санкт-Петербург, Россия'
+<!--              value='Санкт-Петербург, Россия'-->
+              <input value=""
                 type='text'
                 id='origin'
                 name='origin'
-                class='
-                    autocomplete-cities
-                    w-full
-                    h-12
-                    bg-white
-                    rounded
-                    border border-gray-300
-                    focus:border-purple-500
-                    focus:ring-2 focus:ring-purple-200
-                    text-base
-                    outline-none
-                    text-gray-700
-                    py-1
-                    px-3
-                    leading-8
-                    transition-colors
-                    duration-200
-                    ease-in-out
-                  '
-              />
+                data-cy="autocompleteOrigin"
+                class='autocomplete-cities
+                    w-full h-12 bg-white rounded border border-gray-300
+                    focus:border-purple-500 focus:ring-2 focus:ring-purple-200
+                    text-base outline-none text-gray-700 py-1 px-3
+                    leading-8 transition-colors duration-200 ease-in-out' />
 
-              <div
-                class='
-                    autocomplete-container
-                    hidden
-                    origin-top-right
-                    absolute
-                    mt-1
-                    py-1
-                    left-0
-                    w-full
-                    rounded
-                    shadow-lg
-                    bg-white
-                    ring-1 ring-black ring-opacity-5
-                    focus:outline-none
-                  '
+              <div class='autocomplete-container
+                    hidden origin-top-right absolute
+                    mt-1 py-1 left-0 w-full rounded shadow-lg bg-white
+                    ring-1 ring-black ring-opacity-5 focus:outline-none'
                 role='menu'
                 aria-orientation='vertical'
                 aria-labelledby='menu-button'
-                tabindex='-1'
-              ></div>
+                tabindex='-1'></div>
             </div>
           </div>
           <div class='w-3/12 ml-2'>
@@ -173,7 +147,8 @@
             >
             <div class='relative'>
               <input
-                value='Рим, Италия'
+                data-cy="autocompleteDestination"
+                value=''
                 type='text'
                 id='destination'
                 name='destination'
